@@ -1,0 +1,7 @@
+{
+  "TestUrl": "https://etherscan.io/register",
+  "TestBrowserName": "firefox",
+  "TestBrowserVersion": "93.0",
+  "TestUserName": "TestUser1",
+  "TestUserPassword": "TestUserPassword"
+}
