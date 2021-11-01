@@ -1,5 +1,5 @@
 {
- 
+
 
   "TestData": [
     {
@@ -8,7 +8,9 @@
       "Password": "Abcdsdf",
       "ConfirmPassword": "Abcd124",
       "ExpectedValidationMessage": "Password does not match, please check again.",
-      "TestNo": "1"
+      "TestNo": "1",
+      "Terms": "true",
+      "Unsbscribe": "true"
 
 
     },
@@ -18,7 +20,11 @@
       "Password": "Abcd",
       "ConfirmPassword": "Abcd",
       "ExpectedValidationMessage": "Your password must be at least 5 characters long.",
-      "TestNo": "2"
+      "TestNo": "2",
+      "Terms": "true",
+      "Unsbscribe": "true"
+
+
 
     },
     {
@@ -27,7 +33,11 @@
       "Password": "Abcd123",
       "ConfirmPassword": "Abcd123",
       "ExpectedValidationMessage": "Please enter a valid email address.",
-      "TestNo": "3"
+      "TestNo": "3",
+      "Terms": "true",
+      "Unsbscribe": "true"
+
+
 
     },
     {
@@ -36,7 +46,37 @@
       "Password": "Abcd123",
       "ConfirmPassword": "Abcd123",
       "ExpectedValidationMessage": "Username is invalid.",
-      "TestNo": "4"
+      "TestNo": "4",
+      "Terms": "true",
+      "Unsbscribe": "true"
+
+
+
+    },
+    {
+      "UserName": "Test12",
+      "Email": "test@test.com",
+      "Password": "Abcd123",
+      "ConfirmPassword": "Abcd123",
+      "ExpectedValidationMessage": "Please accept our Terms and Conditions.",
+      "TestNo": "5",
+      "Terms": "false",
+      "Unsbscribe": "true"
+
+
+
+    },
+    {
+      "UserName": "Test12",
+      "Email": "test@test.com",
+      "Password": "Abcd123",
+      "ConfirmPassword": "Abcd123",
+      "ExpectedValidationMessage": "Please accept our Terms and Conditions.",
+      "TestNo": "6",
+      "Terms": "false",
+      "Unsbscribe": "false"
+
+
 
     }
   ]

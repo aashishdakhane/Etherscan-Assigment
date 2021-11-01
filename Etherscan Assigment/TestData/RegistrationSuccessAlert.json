@@ -1,0 +1,5 @@
+{
+  "AlertSummary": "Your account has been successfully registered and pending for email verification.",
+  "AlertDetails": "We have sent an email with a confirmation link to your email address. In order to complete the sign-up process, please click on the confirmation link.If you do not receive a confirmation email, please check your spam folder and ensure your spam filters allow emails from noreply@etherscan.io. Also, please verify that you entered a valid email address during registration.If you need any assistance, please contact us.",
+  "AlerSummaryBackGroundColor": "#ccf4ed"
+}

@@ -27,12 +27,15 @@ namespace Etherscan_Assigment.Common
         {
             try
             {
-                TestSetup Appconfig = JsonConvert.DeserializeObject<TestSetup>(File.ReadAllText(Directory.GetCurrentDirectory() + @"\TestData\AppConfig.json"));
+               
 
-                Browser = Appconfig.TestBrowserName.ToLower();
+                Browser =Dataobjects.AppConfig.TestBrowserName.ToLower();
+                KillDriverProcess(Browser);
+                
                 string path = Directory.GetCurrentDirectory() + @"\DriverExecutables\";
+              
 
-                switch (Appconfig.TestBrowserName.ToLower())
+                switch (Dataobjects.AppConfig.TestBrowserName.ToLower())
                 {
                     case "chrome":
 
@@ -45,7 +48,7 @@ namespace Etherscan_Assigment.Common
 
                         Driver = new ChromeDriver(path, ObjOption);
                         Driver.Manage().Window.Maximize();
-                        Driver.Navigate().GoToUrl(Appconfig.TestUrl);
+                        Driver.Navigate().GoToUrl(Dataobjects.AppConfig.TestUrl);
 
                         break;
                     case "edgechromium":
@@ -57,7 +60,7 @@ namespace Etherscan_Assigment.Common
                         };
                         Driver = new EdgeDriver(path, edgeOptions);
                         Driver.Manage().Window.Maximize();
-                        Driver.Navigate().GoToUrl(Appconfig.TestUrl);
+                        Driver.Navigate().GoToUrl(Dataobjects.AppConfig.TestUrl);
 
 
                         break;
@@ -69,7 +72,7 @@ namespace Etherscan_Assigment.Common
                         };
                         Driver = new FirefoxDriver(path, firefoxOptions);
                         Driver.Manage().Window.Maximize();
-                        Driver.Navigate().GoToUrl(Appconfig.TestUrl);
+                        Driver.Navigate().GoToUrl(Dataobjects.AppConfig.TestUrl);
                         break;
 
 
@@ -95,28 +98,10 @@ namespace Etherscan_Assigment.Common
             { Console.WriteLine(ex.ToString()); } 
             finally
             {
-                string processname="";
-                switch (Browser)
-                {
-                    case "chrome":
-                        processname = "chromedriver.exe";
-                        break;
-                    case "edgechromium":
-                        processname = "msedgedriver.exe";
-                        break;
-                    case "firefox":
-                        processname = "geckodriver.exe";
-                        break;
-                }
-                if ( processname != String.Empty)
-                {
-                    foreach (var process in Process.GetProcessesByName(processname))
-                    {
-                        process.Kill();
-                    }
-                }
-               
-            
+                KillDriverProcess(Browser);
+
+
+
             }
         }
         public static void executeScript(string Script)
@@ -125,6 +110,43 @@ namespace Etherscan_Assigment.Common
             executor.ExecuteScript(Script);
         }
         #endregion
-        
+        public Boolean IsElementIsPresent(By Element)
+        {
+            try
+            {
+             Driver.FindElement(Element);
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                
+                return false;
+            }
+        }
+
+        public static void KillDriverProcess(string browser)
+        {
+            string processname = "";
+            switch (Browser)
+            {
+                case "chrome":
+                    processname = "chromedriver.exe";
+                    break;
+                case "edgechromium":
+                    processname = "msedgedriver.exe";
+                    break;
+                case "firefox":
+                    processname = "geckodriver.exe";
+                    break;
+            }
+            if (processname != String.Empty)
+            {
+                foreach (var process in Process.GetProcessesByName(processname))
+                {
+                    process.Kill();
+                }
+            }
+
+        }
     }
 }

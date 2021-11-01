@@ -34,6 +34,9 @@
     <None Update="TestData\AppConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="TestData\RegistrationSuccessAlert.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TestData\TestData1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

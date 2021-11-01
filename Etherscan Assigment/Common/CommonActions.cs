@@ -115,7 +115,7 @@ namespace Etherscan_Assigment.Common
             catch (Exception Ex)
             {
                 Console.WriteLine(Ex.ToString());
-                logger.Error(Ex.ToString(), "Error In Send Keys Action Method");
+                logger.Error(Ex.ToString(), "Get Element No Such element found");
             }
             return Ele;
 

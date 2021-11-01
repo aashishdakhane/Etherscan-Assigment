@@ -12,6 +12,8 @@ namespace Etherscan_Assigment.JSONObjects
         public string ConfirmPassword { get; set; }
         public string ExpectedValidationMessage { get; set; }
         public string TestNo { get; set; }
+        public string Terms { get; set; }
+        public string Unsbscribe { get; set; }
     }
     public class SDataTable
     {
