@@ -70,10 +70,10 @@ namespace Etherscan_Assigment
             
             System.Threading.Thread.Sleep(3000);
         }
+
         [TestMethod]
-       
         [TestCategory("Regression"), TestCategory("Smoke Test"), TestCategory("New Registration"), Description("To verify user can create account")]
-        public void VerifyPageValidations()
+        public void VerifyCreateAccount()
         {
             Utility utility = new Utility();
             CreateNewRegistration();
