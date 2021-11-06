@@ -53,37 +53,40 @@ namespace Etherscan_Assigment
         [TestCategory("Regression"), TestCategory("New Registration"), Description("To verify Mandatory validations are working")]
         public void VerifyPageValidations(string name,string email,string password,string confirm,string expected,string TestNo,string Terms,string Unsubscribe)
         {
+            Loggers.logger.Info("----------------Test Execution Started------------------");
             Utility utility = new Utility();
             CreateNewRegistration(name, email, password, confirm, expected, TestNo, Terms, Unsubscribe);
             Assert.AreNotSame(utility.IsElementIsPresent(lblSuccessAlert),true);
             
             System.Threading.Thread.Sleep(3000);
+            Loggers.logger.Info("----------------Test Execution End------------------");
         }
 
         [TestMethod]
         [TestCategory("Regression"), TestCategory("Smoke Test"), TestCategory("New Registration"), Description("To verify user can create account")]
         public void VerifyCreateAccount()
         {
+            Loggers.logger.Info("----------------Test Execution Started------------------");
             Utility utility = new Utility();
             CreateNewRegistration();
             Assert.AreEqual(utility.IsElementIsPresent(lblSuccessAlert), true);
             Assert.AreEqual(getElement(lblSuccessAlert).Text, Dataobjects.RSussessAlert.AlertSummary);
 
             System.Threading.Thread.Sleep(3000);
+            Loggers.logger.Info("----------------Test Execution End------------------");
         }
 
         [TestCleanup]
         public void EdgeDriverCleanup()
         {
             Utility.TearDown();
+            NLog.LogManager.Shutdown();
         }
-        
 
 
 
-            
 
-                 
+       
 
     }
 }

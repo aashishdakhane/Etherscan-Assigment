@@ -27,7 +27,7 @@ namespace Etherscan_Assigment.Common
         {
             try
             {
-               
+              
 
                 Browser =Dataobjects.AppConfig.TestBrowserName.ToLower();
                 KillDriverProcess(Browser);
@@ -49,6 +49,7 @@ namespace Etherscan_Assigment.Common
                         Driver = new ChromeDriver(path, ObjOption);
                         Driver.Manage().Window.Maximize();
                         Driver.Navigate().GoToUrl(Dataobjects.AppConfig.TestUrl);
+                        Loggers.logger.Info("Open Chrome Browser");
 
                         break;
                     case "edgechromium":
@@ -61,7 +62,7 @@ namespace Etherscan_Assigment.Common
                         Driver = new EdgeDriver(path, edgeOptions);
                         Driver.Manage().Window.Maximize();
                         Driver.Navigate().GoToUrl(Dataobjects.AppConfig.TestUrl);
-
+                        Loggers.logger.Info("Open Edge Chromim Browser");
 
                         break;
                     case "firefox":
@@ -73,6 +74,7 @@ namespace Etherscan_Assigment.Common
                         Driver = new FirefoxDriver(path, firefoxOptions);
                         Driver.Manage().Window.Maximize();
                         Driver.Navigate().GoToUrl(Dataobjects.AppConfig.TestUrl);
+                        Loggers.logger.Info("Open Fire fox  Browser");
                         break;
 
 
@@ -80,6 +82,7 @@ namespace Etherscan_Assigment.Common
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                Loggers.logger.Info(ex.ToString());
             }
 
         }
@@ -99,8 +102,8 @@ namespace Etherscan_Assigment.Common
             finally
             {
                 KillDriverProcess(Browser);
-
-
+               
+               
 
             }
         }

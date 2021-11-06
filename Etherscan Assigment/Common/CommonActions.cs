@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 using NLog;
-
+using Etherscan_Assigment.Common;
 
 
 
@@ -11,7 +11,7 @@ namespace Etherscan_Assigment.Common
 {
     public  class CommonActions 
     {
-       private Logger logger = LogManager.GetCurrentClassLogger();
+        
         /// <summary>
         /// This method Wait and click on element
         /// </summary>
@@ -34,17 +34,16 @@ namespace Etherscan_Assigment.Common
                     IWebElement Ele = Utility.Driver.FindElement(Element);
                     Actions OAction = new Actions(Utility.Driver);
                     OAction.Click(Ele).Build().Perform();
-                    logger.Info("Clicked on Element" + Ele.GetAttribute("Name"));
-                 
+                Loggers.logger.Info( "Clicked On element " + Element.ToString());
 
                 //}
 
-               
+
             }
             catch (Exception Ex) 
             {
                 Console.WriteLine(Ex.ToString());
-                logger.Error(Ex.ToString(),"Error In Click Action Method");
+               Loggers.logger.Error(Ex.ToString(),"Error In Click Action Method");
             }
             
 
@@ -65,14 +64,14 @@ namespace Etherscan_Assigment.Common
 
                 };
                 bool WebElementStatus = webDriverWait.Until(driver => driver.FindElement(Element).Enabled == true && driver.FindElement(Element).Displayed == true);
-                logger.Info("Is Element enabled and displayed : " + WebElementStatus.ToString());
+                Loggers.logger.Info("Is Element enabled and displayed : " + WebElementStatus.ToString());
                 if (WebElementStatus == true)
                 {
 
                     IWebElement Ele = Utility.Driver.FindElement(Element);
                     Actions OAction = new Actions(Utility.Driver);
                     OAction.Click(Ele).SendKeys(text).Build().Perform();
-                    logger.Info("Send Keys : "+ text + " in Element" + Ele.GetAttribute("Name"));
+                    Loggers.logger.Info("Send Keys : "+ text + " in Element" + Element.ToString());
 
 
                 }
@@ -82,7 +81,7 @@ namespace Etherscan_Assigment.Common
             catch (Exception Ex)
             {
                 Console.WriteLine(Ex.ToString());
-                logger.Error(Ex.ToString(), "Error In Send Keys Action Method");
+                Loggers.logger.Error(Ex.ToString(), "Error In Send Keys Action Method");
             }
 
         }
@@ -103,7 +102,7 @@ namespace Etherscan_Assigment.Common
 
                     Ele = Utility.Driver.FindElement(Element);
 
-                    logger.Info("  Element" + Ele.GetAttribute("Name"));
+                Loggers.logger.Info("  Element " + Element.ToString());
 
 
                 //}
@@ -113,7 +112,7 @@ namespace Etherscan_Assigment.Common
             catch (Exception Ex)
             {
                 Console.WriteLine(Ex.ToString());
-                logger.Error(Ex.ToString(), "Get Element No Such element found");
+                Loggers.logger.Error(Ex.ToString(), "Get Element No Such element found");
             }
             return Ele;
 
