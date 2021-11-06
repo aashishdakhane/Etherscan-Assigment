@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using Etherscan_Assigment.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Etherscan_Assigment.Pages
 {
-   public class  PageNewRegistration:Common.CommonActions
+    public class  PageNewRegistration:Common.CommonActions
     {
         public   By Captcha = By.Id("recaptcha-anchor");
         public By ChkTermsandCondition = By.Id("ContentPlaceHolder1_MyCheckBox");
