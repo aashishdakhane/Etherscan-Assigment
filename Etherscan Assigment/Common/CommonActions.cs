@@ -11,7 +11,7 @@ namespace Etherscan_Assigment.Common
 {
     public  class CommonActions 
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
+       private Logger logger = LogManager.GetCurrentClassLogger();
         /// <summary>
         /// This method Wait and click on element
         /// </summary>

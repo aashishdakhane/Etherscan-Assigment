@@ -31,6 +31,9 @@
     <None Update="DriverExecutables\msedgedriver.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TestData\AppConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
