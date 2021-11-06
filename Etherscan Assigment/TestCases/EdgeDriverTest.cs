@@ -1,10 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Edge;
 using Etherscan_Assigment.Common;
-using Etherscan_Assigment.JSONObjects;
-using System.IO;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using Etherscan_Assigment.Pages;
 
@@ -13,13 +8,7 @@ namespace Etherscan_Assigment
     [TestClass]
     public class EdgeDriverTest : PageNewRegistration
     {
-        // In order to run the below test(s), 
-        // please follow the instructions from http://go.microsoft.com/fwlink/?LinkId=619687
-        // to install Microsoft WebDriver.
-
-        private EdgeDriver _driver;
-
-
+     
         public static IEnumerable<object[]> Data
         {
             get
