@@ -6,8 +6,10 @@ using System.Text;
 
 namespace Etherscan_Assigment.Common
 {
-   public static class Loggers
+   public static  class Loggers
     {
-        public static Logger logger = LogManager.GetCurrentClassLogger();
-    }
+        public static Logger logger =LogManager.GetCurrentClassLogger();
+        
+        
+}
 }

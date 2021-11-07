@@ -11,14 +11,16 @@ namespace Etherscan_Assigment.Common
 {
     public  class CommonActions 
     {
-        
+
+       
+
         /// <summary>
         /// This method Wait and click on element
         /// </summary>
         /// <param name="Element">By</param>
         public  void Click(By Element)
         {
-            
+           
             try
             {
                 WebDriverWait webDriverWait = new WebDriverWait(Utility.Driver, TimeSpan.FromSeconds(30))
@@ -56,6 +58,7 @@ namespace Etherscan_Assigment.Common
 
         public void SendText(By Element,string text)
         {
+            
             try
             {
                 WebDriverWait webDriverWait = new WebDriverWait(Utility.Driver, TimeSpan.FromSeconds(5))
