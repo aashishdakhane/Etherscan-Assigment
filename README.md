@@ -1,5 +1,5 @@
 # Etherscan-Assigment
-We used C# (Dot net core 2.1) and Selenium 4 for automation.
+I have used C# (Dot net core 2.1) and Selenium 4 for automation.
 For Successful test execution CAPCTHA should be disabled.
 Log file will be generated at C:\temp
 Intigrate this code in TFS Repository and set up CI CD pip line. TFS reports will be useful.
